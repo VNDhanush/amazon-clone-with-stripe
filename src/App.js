@@ -1,10 +1,14 @@
 import React from 'react';
 import './App.css';
+import Header from "./Header";
 
 function App() {
   return (
-    <div className="App">
-      <h2>welcome to amazon coding challenge</h2>
+    //BEM naming convention
+    <div className="app">
+      {/* Header */}
+      <Header />
+      {/* Home */}
     </div>
   );
 }
