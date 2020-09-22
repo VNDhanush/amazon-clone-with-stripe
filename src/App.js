@@ -14,7 +14,6 @@ function App() {
         <Switch>
           <Route path="/login">
             <Login />
-            <h1>Login page</h1>
           </Route>
           <Route path="/checkout">
             <Header />
