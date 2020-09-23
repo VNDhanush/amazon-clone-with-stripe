@@ -14,7 +14,7 @@ function CheckoutProduct({ id, image, title, price, rating }) {
     }
     return (
         <div className="checkoutProduct">
-            <img className="checkoutProduct__image" src={image} alt="the image is not found" />
+            <img className="checkoutProduct__image" src={image} />
             <div className="checkoutProduct__info">
                 <p className="checkoutProduct__title">{title}</p>
                 <p className="checkoutProduct__price">
