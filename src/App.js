@@ -1,57 +1,68 @@
 import React, { useEffect } from 'react';
 import './App.css';
-import Header from "./Header";
-import Home from "./Home";
-import Checkout from "./Checkout";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Login from "./Login";
-import { auth } from "./firebase";
-import { useStateValue } from "./StateProvider";
-
-
-
+import {BrowserRouter as Router,Route,Link,Switch} from 'react-router-dom';
+import Header from './Header';
+import Home from './Home';
+import Checkout from './Checkout';
+import LoginPage from './LoginPage';
+import { auth } from './firebase';
+import { useStateValue } from './StateProvider';
+import Footer from './Footer';
 
 function App() {
-  const [{ }, dispatch] = useStateValue();
-  useEffect(() => {
-    //run only once when the app components loads....
-    auth.onAuthStateChanged(authUser => {
-      console.log('The USER IS>>>', authUser);
+  const [{}, dispatch] = useStateValue();
 
-      if (authUser) {
-        //the user just logged in or the user was logged in before 
+  useEffect(() => {
+    //This will only run once when the app componenent loads..
+
+    //onAuthStateChnage is used observe whether the user is signin or signout
+    auth.onAuthStateChanged(authUser => {
+      //console.log('The User is >>>', authUser);
+    
+      if(authUser){
+        //The user just logged in/ The user was logged in 
+      dispatch({
+        type: 'SET_USER',
+        user: authUser
+      })
+      
+      
+      }else{
+        //The user is loogged out
         dispatch({
           type: 'SET_USER',
-          user: authUser,
-        })
-      } else {
-        //the user is logged out
-        dispatch({
-          type: 'SET_USER',
-          user: null,
+          user: null
         })
       }
     })
-  }, [])
+  },[])
+
   return (
-    //BEM naming convention
-    <Router>
-      <div className="app">
+    <div className="App">
+      <Router>
+        
         <Switch>
-          <Route path="/login">
-            <Login />
+          
+          <Route path = '/login'>
+             <LoginPage />
           </Route>
-          <Route path="/checkout">
+          <Route path='/checkout'>
             <Header />
             <Checkout />
           </Route>
-          <Route path="/">
+          <Route path='/payment'>
+            <Header /> 
+          </Route>
+          <Route path='/'>
             <Header />
             <Home />
+            <Footer />
           </Route>
+          
         </Switch>
-      </div>
-    </Router>
+      </Router>
+     
+    </div>
   );
 }
 

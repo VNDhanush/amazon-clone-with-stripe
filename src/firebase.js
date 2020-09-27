@@ -1,19 +1,22 @@
-import firebase from "firebase";
+import firebase from 'firebase';
+
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCVcT2n4bbvIj7hCpEornobDJdQ0x_ciOg",
-    authDomain: "project-stripe.firebaseapp.com",
-    databaseURL: "https://project-stripe.firebaseio.com",
-    projectId: "project-stripe",
-    storageBucket: "project-stripe.appspot.com",
-    messagingSenderId: "1047505913177",
-    appId: "1:1047505913177:web:62417ba6038e40c93e3848",
-    measurementId: "G-LHTJE6VJ70"
+  apiKey: "AIzaSyAz8EmZtqrWFEi0-ouXUqmPzv_gdYeVf_o",
+  authDomain: "clone-stripe-challenge.firebaseapp.com",
+  databaseURL: "https://clone-stripe-challenge.firebaseio.com",
+  projectId: "clone-stripe-challenge",
+  storageBucket: "clone-stripe-challenge.appspot.com",
+  messagingSenderId: "551819227168",
+  appId: "1:551819227168:web:79cb2f82d935b678bc4c45",
+  measurementId: "G-KR1ER05SCG"
 };
 
+//initialize the app
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 
+//initialize database
 const db = firebaseApp.firestore();
 const auth = firebase.auth();
 
-export {db,auth}; 
+export { db, auth };
