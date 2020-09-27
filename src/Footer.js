@@ -9,7 +9,7 @@ function Footer() {
             <div className='footer__link'>
                 <a href='#' className='footer__backToTop'>Back To Top</a>
             </div>
-            
+
             <div className='footer__container'>
                 <div className='footer__containerColumn'>
                     <h3 className='footer__containerHeading'>Get To Know Us</h3>
@@ -48,21 +48,21 @@ function Footer() {
                 </div>
             </div>
             <div className='footer__containerFooter'>
-                
+
                 <Link to='/'>
-                    <img 
+                    <img
                         className='header__logo'
                         src='http://pngimg.com/uploads/amazon/amazon_PNG11.png'
                         alt=''
                     />
                 </Link>
-                <div className='footer__buttons'>
-                    <Button variant='outlined'><p>English</p></Button>
-                    <Button variant='outlined'><p>$ USD - U.S.Dollar</p></Button>
-                    <Button variant='outlined'><p>United States</p></Button>
-                </div>
-                
             </div>
+            <div className='footer__buttons'>
+                <Button variant='outlined'><p>English</p></Button>
+                <Button variant='outlined'><p>₹ INR - IND Rupees</p></Button>
+                <Button variant='outlined'><p>INDIA 🇮🇳</p></Button>
+            </div>
+
         </div>
     )
 }
