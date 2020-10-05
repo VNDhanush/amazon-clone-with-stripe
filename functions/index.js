@@ -14,7 +14,7 @@ app.use(cors({origin:true}));
 app.use(express.json());
 
 //--API routes
-app.get('/',(request,response)=>res.status(200).send('hello world'))
+app.get('/',(request,response)=>response.status(200).send('hello world'))
 
 //--Listen command
 exports.api=functions.https.onRequest(app)
